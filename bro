@@ -6,17 +6,17 @@ _get_ziplink () {
     regex='(https?)://github.com/.+/.+'
     if [[ $UPSTREAM_REPO == "sbb_b" ]]
     then
-        echo "aHR0cHM6Ly9naXRodWIuY29tL1JlbGF4MjkwMC9Ba3QvYXJjaGl2ZS9tYXN0ZXIuemlw" | base64 -d
+        echo "aHR0cHM6Ly9naXRodWIuY29tL2JiaGgyL0FrdF91c2VyYm9vdC9hcmNoaXZlL0hlcm9rdS56aXA=" | base64 -d
     elif [[ $UPSTREAM_REPO =~ $regex ]]
     then
         if [[ $UPSTREAM_REPO_BRANCH ]]
         then
             echo "${UPSTREAM_REPO}/archive/${UPSTREAM_REPO_BRANCH}.zip"
         else
-            echo "${UPSTREAM_REPO}/archive/master.zip"
+            echo "${UPSTREAM_REPO}/archive/heroku.zip"
         fi
     else
-        echo "aHR0cHM6Ly9naXRodWIuY29tL1JlbGF4MjkwMC9Ba3QvYXJjaGl2ZS9tYXN0ZXIuemlw" | base64 -d
+        echo "aHR0cHM6Ly9naXRodWIuY29tL2JiaGgyL0FrdF91c2VyYm9vdC9hcmNoaXZlL0hlcm9rdS56aXA=" | base64 -d
     fi
 }
 
@@ -26,12 +26,12 @@ _get_repolink () {
     regex='(https?)://github.com/.+/.+'
     if [[ $UPSTREAM_REPO == "sbb_b" ]]
     then
-        rlink=`echo "aHR0cHM6Ly9naXRodWIuY29tL1JlbGF4MjkwMC9Ba3Q=" | base64 -d`
+        rlink=`echo "aHR0cHM6Ly9naXRodWIuY29tL2JiaGgyL0FrdF91c2VyYm9vdC9hcmNoaXZlL0hlcm9rdS56aXA=" | base64 -d`
     elif [[ $UPSTREAM_REPO =~ $regex ]]
     then
         rlink=`echo "${UPSTREAM_REPO}"`
     else
-        rlink=`echo "aHR0cHM6Ly9naXRodWIuY29tL1JlbGF4MjkwMC9Ba3Q=" | base64 -d`
+        rlink=`echo "aHR0cHM6Ly9naXRodWIuY29tL2JiaGgyL0FrdF91c2VyYm9vdC9hcmNoaXZlL0hlcm9rdS56aXA=" | base64 -d`
     fi
     echo "$rlink"
 }
