@@ -45,7 +45,7 @@ _run_catpack_git() {
     $(_run_python_code 'from git import Repo
 import sys
 OFFICIAL_UPSTREAM_REPO = "https://github.com/bbhh2/Akt"
-ACTIVE_BRANCH_NAME = "master"
+ACTIVE_BRANCH_NAME = "heroku"
 repo = Repo.init()
 origin = repo.create_remote("temponame", OFFICIAL_UPSTREAM_REPO)
 origin.fetch()
@@ -58,7 +58,7 @@ _run_cat_git() {
     $(_run_python_code 'from git import Repo
 import sys
 OFFICIAL_UPSTREAM_REPO="'$repolink'"
-ACTIVE_BRANCH_NAME = "'$UPSTREAM_REPO_BRANCH'" or "master"
+ACTIVE_BRANCH_NAME = "'$UPSTREAM_REPO_BRANCH'" or "heroku"
 repo = Repo.init()
 origin = repo.create_remote("temponame", OFFICIAL_UPSTREAM_REPO)
 origin.fetch()
